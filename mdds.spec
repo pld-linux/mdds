@@ -1,18 +1,17 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	0.6.0
+Version:	0.6.1
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://code.google.com/p/multidimalgorithm/downloads/list
 Source0:	http://multidimalgorithm.googlecode.com/files/%{name}_%{version}.tar.bz2
-# Source0-md5:	3e89a35f253a4f1c7de68c57d851ef38
-Patch0:		0001-Fixes-build-breakage-on-Debian.patch
-Patch1:		0001-fix-linking-error-with-boost-1.50.patch
-Patch2:		0001-help-compiler-select-the-right-overload-of-vector-in.patch
+# Source0-md5:	9f9e15966b5624834157fe3d748312bc
 URL:		http://code.google.com/p/multidimalgorithm/
-BuildRequires:	boost-devel
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	boost-devel >= 1.39
+BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +39,7 @@ Zaimplementowane są następujące struktury danych:
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Group:		Development/Libraries
-Requires:	boost-devel
+Requires:	boost-devel >= 1.39
 
 %description devel
 A collection of multi-dimensional data structures and indexing
@@ -64,14 +63,12 @@ Zaimplementowane są następujące struktury danych:
 
 %prep
 %setup -q -n %{name}_%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 # this is only used in tests
-sed -i -e '/^CPPFLAGS/s/-Wall.*-std/%{rpmcflags} -std/' Makefile.in
+sed -i -e '/^CPPFLAGS_NODEBUG/s/-Wall -Os -g/%{rpmcflags} -Wall/' configure.ac
 
 %build
+%{__autoconf}
 # we can switch from boost to c++0x (the default) if sufficiently new C++11 compliant g++ is enforced
 %configure \
 	--with-hash-container=boost
