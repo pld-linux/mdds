@@ -1,16 +1,17 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	0.7.1
+Version:	0.8.0
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://code.google.com/p/multidimalgorithm/downloads/list
 Source0:	http://multidimalgorithm.googlecode.com/files/%{name}_%{version}.tar.bz2
-# Source0-md5:	096fbb818177a7575511c1fd9d4bf7dd
+# Source0-md5:	b0bba8c768f3d92608a07149039510e5
 URL:		http://code.google.com/p/multidimalgorithm/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	boost-devel >= 1.39
+BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -78,6 +79,7 @@ sed -i -e '/^CPPFLAGS_NODEBUG/s/-Wall -Os -g/%{rpmcflags} -Wall/' configure.ac
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_includedir}/mdds
 cp -a include/mdds/* $RPM_BUILD_ROOT%{_includedir}/mdds
+install -Dp misc/mdds.pc $RPM_BUILD_ROOT%{_npkgconfigdir}/mdds.pc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -86,3 +88,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING NEWS README
 %{_includedir}/mdds
+%{_npkgconfigdir}/mdds.pc
