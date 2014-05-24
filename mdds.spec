@@ -1,13 +1,13 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	0.10.2
+Version:	0.10.3
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: http://code.google.com/p/multidimalgorithm/wiki/Downloads
 Source0:	http://kohei.us/files/mdds/src/%{name}_%{version}.tar.bz2
-# Source0-md5:	47203e7cade74e5c385aa812f21e7932
+# Source0-md5:	aa5ca9d1ed1082890835afab26400a39
 URL:		http://code.google.com/p/multidimalgorithm/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	boost-devel >= 1.39
