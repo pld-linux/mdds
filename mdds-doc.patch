@@ -1,0 +1,11 @@
+--- mdds_1.0.0/Makefile.in.orig	2015-10-07 00:57:07.000000000 +0200
++++ mdds_1.0.0/Makefile.in	2015-11-29 15:52:19.781596214 +0100
+@@ -237,7 +237,7 @@
+ 
+ build-doc-sphinx:
+ 	@echo "Building documentation by sphinx..."
+-	@sphinx-build -b html ./doc/ ./doc/_build
++	cd doc && sphinx-build -b html ./ ./_build
+ 
+ build-doc: build-doc-doxygen build-doc-sphinx
+ 
