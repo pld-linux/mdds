@@ -6,7 +6,7 @@ Summary:	A collection of multi-dimensional data structures and indexing algorith
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://gitlab.com/mdds/mdds
@@ -21,7 +21,8 @@ BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	sed >= 4.0
 %if %{with apidocs}
 BuildRequires:	doxygen
-BuildRequires:	python-sphinx_bootstrap_theme
+BuildRequires:	python3-sphinx_bootstrap_theme
+BuildRequires:	python3-breathe
 BuildRequires:	sphinx-pdg
 %endif
 BuildArch:	noarch
