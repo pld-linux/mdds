@@ -9,7 +9,7 @@ Version:	1.4.3
 Release:	1
 License:	MIT
 Group:		Development/Libraries
-#Source0Download: https://gitlab.com/mdds/mdds
+#Source0Download: https://gitlab.com/mdds/mdds/raw/master/README.md
 Source0:	http://kohei.us/files/mdds/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	0a30078082ea1cd50f32ec69499182db
 Patch0:		%{name}-doc.patch
@@ -21,7 +21,6 @@ BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	doxygen
 BuildRequires:	python3-breathe
 BuildRequires:	python3-cloud_sptheme
-BuildRequires:	python3-sphinx_bootstrap_theme
 BuildRequires:	sphinx-pdg-3
 %endif
 BuildArch:	noarch
