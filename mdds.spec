@@ -19,9 +19,9 @@ BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	rpmbuild(macros) >= 1.446
 %if %{with apidocs}
 BuildRequires:	doxygen
-BuildRequires:	python3-sphinx_bootstrap_theme
 BuildRequires:	python3-breathe
 BuildRequires:	python3-cloud_sptheme
+BuildRequires:	python3-sphinx_bootstrap_theme
 BuildRequires:	sphinx-pdg-3
 %endif
 BuildArch:	noarch
