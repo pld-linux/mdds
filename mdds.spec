@@ -5,13 +5,13 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	1.4.1
+Version:	1.4.3
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://gitlab.com/mdds/mdds
 Source0:	http://kohei.us/files/mdds/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	3717d13efba269fd279686f94b73f7b1
+# Source0-md5:	0a30078082ea1cd50f32ec69499182db
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.com/mdds/mdds
 BuildRequires:	boost-devel >= 1.39
@@ -21,6 +21,7 @@ BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	doxygen
 BuildRequires:	python3-sphinx_bootstrap_theme
 BuildRequires:	python3-breathe
+BuildRequires:	python3-cloud_sptheme
 BuildRequires:	sphinx-pdg-3
 %endif
 BuildArch:	noarch
@@ -112,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGELOG LICENSE NEWS README.md
+%doc AUTHORS CHANGELOG LICENSE README.md
 %{_includedir}/mdds-1.4
 %{_npkgconfigdir}/mdds-1.4.pc
 
