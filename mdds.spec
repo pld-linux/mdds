@@ -5,13 +5,13 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	1.5.0
+Version:	1.6.0
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://gitlab.com/mdds/mdds/raw/master/README.md
 Source0:	http://kohei.us/files/mdds/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	52cb08e92fec8842a3724bd89051f9d3
+# Source0-md5:	a9e9704bddfacc27fcde6827b9cef1db
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.com/mdds/mdds
 BuildRequires:	boost-devel >= 1.39
