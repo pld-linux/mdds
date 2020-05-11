@@ -115,6 +115,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/mdds-1.5
 %{_npkgconfigdir}/mdds-1.5.pc
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %doc doc/_doxygen/html doc/_build/{_static,*.html,*.js}
+%endif
