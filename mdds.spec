@@ -97,7 +97,7 @@ Dokumentacja API biblioteki MDDS.
 %{__make}
 
 %if %{with apidocs}
-%{__make} doc
+%{__make} -j1 doc
 %endif
 
 %install
