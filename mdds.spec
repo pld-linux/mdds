@@ -5,13 +5,14 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-Version:	1.7.0
+# keep in sync with BuildRequires in libreoffice.spec, ixion.spec, liborcus.spec
+Version:	2.0.3
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://gitlab.com/mdds/mdds/-/releases
-Source0:	http://kohei.us/files/mdds/src/%{name}-%{version}.tar.xz
-# Source0-md5:	dd2c5bdeb114af6fbaa13d8640f996ff
+Source0:	https://kohei.us/files/mdds/src/%{name}-%{version}.tar.xz
+# Source0-md5:	6ff7a461e9fc408c508bbfbf1f53969a
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.com/mdds/mdds
 BuildRequires:	boost-devel >= 1.39
@@ -114,8 +115,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG LICENSE README.md
-%{_includedir}/mdds-1.5
-%{_npkgconfigdir}/mdds-1.5.pc
+%{_includedir}/mdds-2.0
+%{_npkgconfigdir}/mdds-2.0.pc
 
 %if %{with apidocs}
 %files apidocs
