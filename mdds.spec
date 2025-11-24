@@ -23,6 +23,7 @@ BuildRequires:	xz
 %if %{with apidocs}
 BuildRequires:	doxygen
 BuildRequires:	python3-breathe
+BuildRequires:	python3-piccolo_theme
 BuildRequires:	sphinx-pdg-3
 %endif
 BuildArch:	noarch
