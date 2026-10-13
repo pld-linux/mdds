@@ -5,14 +5,14 @@
 Summary:	A collection of multi-dimensional data structures and indexing algorithms
 Summary(pl.UTF-8):	Zbiór struktur danych wielowymiarowych oraz algorytmów indeksujących
 Name:		mdds
-# keep in sync with BuildRequires in libreoffice.spec, ixion.spec, liborcus.spec
-Version:	3.0.0
+# keep in sync with BuildRequires in libreoffice.spec, ixion.spec, liborcus.spec (apiver must match)
+Version:	3.2.1
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://gitlab.com/mdds/mdds/-/releases
 Source0:	https://gitlab.com/api/v4/projects/mdds%2Fmdds/packages/generic/source/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	91a279364d47d91818b99be32e73ac62
+# Source0-md5:	00900a6ae7a1546a1111b213841daa71
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.com/mdds/mdds
 BuildRequires:	boost-devel >= 1.39
@@ -28,6 +28,8 @@ BuildRequires:	sphinx-pdg-3
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		apiver	3.0
 
 %description
 A collection of multi-dimensional data structures and indexing
@@ -116,8 +118,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG LICENSE README.md
-%{_includedir}/mdds-3.0
-%{_npkgconfigdir}/mdds-3.0.pc
+%{_includedir}/mdds-%{apiver}
+%{_npkgconfigdir}/mdds-%{apiver}.pc
 
 %if %{with apidocs}
 %files apidocs
